@@ -3,7 +3,7 @@
 # Функция для поднятия контейнеров
 start_containers() {
   echo "Поднимаем контейнеры..."
-  docker-compose up -d
+  docker compose up -d
   if [ $? -ne 0 ]; then
     echo "Ошибка при поднятии контейнеров. Завершаю выполнение."
     exit 1
@@ -24,7 +24,7 @@ run_ansible_playbook() {
 # Функция для остановки контейнеров
 stop_containers() {
   echo "Останавливаем контейнеры..."
-  docker-compose down
+  docker compose down
   if [ $? -ne 0 ]; then
     echo "Ошибка при остановке контейнеров."
     exit 1
